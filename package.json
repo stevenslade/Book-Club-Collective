@@ -1,0 +1,31 @@
+{
+  "name": "book-club-collective",
+  "version": "1.0.0",
+  "description": "A Book Club meeting site",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenslade/Book-Club-Collective.git"
+  },
+  "author": "Ben S, Hannah M, Pia T, Micheal F, Ehsan K",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevenslade/Book-Club-Collective/issues"
+  },
+  "homepage": "https://github.com/stevenslade/Book-Club-Collective#readme"
+}
