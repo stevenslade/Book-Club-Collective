@@ -1,4 +1,7 @@
 # Book-Club-Collective
+
+![logo](./images/logo2.png)
+
 A Full stack app for reviewing books and finding a book club of like minded readers
 
 ## Table of Contents
@@ -21,6 +24,10 @@ A Full stack app for reviewing books and finding a book club of like minded read
 ## <a id="description"></a>Description
 
 * This application allows you as a book reader to find reviews of books submitted by other readers, submit your own reviews for other readers to enjoy and to find a book club with whom you can enjoy discussing your reads.
+
+## <a id="wireframe"></a>Wireframe
+
+![Wireframe Home Page](./images/BCCWireframe.png)
 
 ## <a id="screenshot"></a>Screenshot
 
