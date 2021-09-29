@@ -1,25 +1,46 @@
-header, .project:not(:last-child) {
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .no-button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    color: #1b89bc;
-    text-decoration: none;
-    font-size: 100%;
-  }
-  
-  .no-button:hover {
-    color: #065b83;
-    text-decoration: underline;
-  }
-  
-  .dollar-amount {
-    color: #056605;
-    font-weight: bold;
-    margin-left: -5px;
-  }
-  
+body {
+  background-image: url("./books.jpg") ;
+  background-attachment: fixed;
+  color: #65625e;
+  font-family: poiret-one,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+.navbar {
+  padding: 10px 10px 10px 10px;
+  font-family: farm-new,sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  position: sticky;
+  color: #65625e;
+  background-color: #fcf8f3;
+  /* justify-content: center; */
+}
+
+button.btn {
+  background-color: #65625e;
+  color: #fcf8f3;
+  border: none;
+  margin: 5px;
+  border-radius: 1rem;
+  font-size: 15px;
+  font-family: farm-new,sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+button.btn:hover{
+  cursor: pointer;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+input {
+  border-radius: 1rem;
+  background-color: rgb(255,255,255,0.95);
+  padding: 5px;
+  border-style:solid;
+}
