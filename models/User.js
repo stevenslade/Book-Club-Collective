@@ -35,6 +35,23 @@ User.init(
         len: [8],
       },
     },
+    favorite_book: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    }, 
+    favorite_quote: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
+    number_reviews: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    date_joined: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
   },
   {
     hooks: {
