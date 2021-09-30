@@ -71,3 +71,19 @@ button.btn:hover {
   border-radius: 1rem;
   font-size: 15px;
 }
+.col-sm {
+  margin: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card {
+  padding: 20px;
+}
+
+.reviewCard {
+  margin: 40px;
+  background-color:#fcf8f3;
+  color: #65625e;
+}
