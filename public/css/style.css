@@ -1,5 +1,5 @@
 body {
-  background-image: url("./books.jpg") ;
+  background-image: url("../../images/books.jpg") ;
   background-attachment: fixed;
   color: #65625e;
   font-family: poiret-one,sans-serif;
@@ -15,7 +15,7 @@ body {
   position: sticky;
   color: #65625e;
   background-color: #fcf8f3;
-  /* justify-content: center; */
+
 }
 
 button.btn {
