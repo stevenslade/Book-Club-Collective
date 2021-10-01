@@ -7,7 +7,6 @@
   <title>Book Club Collective</title>
   <link rel="stylesheet" href="/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
   <link
     rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -25,11 +24,11 @@
   <!-- Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/sgp1yai.css">
   <!-- Linked to CSS-->
-  <link rel="stylesheet" href="./public/css/style.css" />
+  {{!-- <link rel="stylesheet" type="text/css" href="../../public/css/style.css" /> --}}
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #fcf8f3;">
-    <a class="navbar-brand" href="/"><img src = "./logo5.png"></a>
+    <a class="navbar-brand" href="/"><img src = "/images/logo5.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -40,12 +39,12 @@
         <a class="nav-item nav-link" href="/top10">Top 10 List</a>
         <a class="nav-item nav-link" href="/review">Write a Review</a>
         <a class="nav-item nav-link" href="/clubs">Join a Book Club</a>
+        <a class="nav-item nav-link" href="/login">Login</a>
+        <a class="nav-item nav-link" href="/register">Register</a>
         <div class="login-container">
             <form>
-              <input type="text" placeholder="Username" name="username">
-              <input type="text" placeholder="Password" name="psw">
-              <button type="submit" class= "btn">Login</button>
-              <button type="submit" class= "btn">Register</button>
+              <input type="text" placeholder="Book Search" name="bookSearch">
+              <button type="submit" class= "btn"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
           </div>
       </div>
