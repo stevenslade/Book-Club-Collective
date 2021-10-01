@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Club Collective</title>
-  <link rel="stylesheet" href="/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <link
@@ -25,7 +24,7 @@
   <!-- Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/sgp1yai.css">
   <!-- Linked to CSS-->
-  <link rel="stylesheet" href="./public/css/style.css" />
+<link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #fcf8f3;">
@@ -38,7 +37,8 @@
         <!-- <a class="nav-item nav-link" href="/login">Login</a>
         <a class="nav-item nav-link" href="/register">Register</a> -->
         <a class="nav-item nav-link" href="/top10">Top 10 List</a>
-        <a class="nav-item nav-link" href="/review">Write a Review</a>
+        {{!-- changed to search book --}}
+        <a class="nav-item nav-link" href="/searchbook">Write a Review</a> 
         <a class="nav-item nav-link" href="/clubs">Join a Book Club</a>
         <div class="login-container">
             <form>
@@ -68,20 +68,29 @@
   type="text/javascript"
   src="//cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js"
 ></script>
-<script src="./public/js/auth.js"></script>
 
-        {{!-- <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
+{{!-- This is the google endpoint for the books api --}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+{{!-- This link is added to allow access to the script file with the booksearch code --}}
+<script src="/js/searchbookapi.js"></script>
+
+
+
+        {{!-- Conditionally render login or logout links --}}
+
+        {{!-- {{#if logged_in}}
         <a href="/profile">profile</a> |
         <button class="no-button" id="logout">logout</button>
         {{else}}
         <a href="/login">login</a>
         {{/if}}
-  
+   --}}
   <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}} --}}
+  {{!-- {{#if logged_in}}
+  <script src="/js/logout.js"></script> --}}
+  {{!-- {{/if}} --}}
+
 </body>
 
 </html>

@@ -75,8 +75,17 @@ router.get('/login', (req, res) => {
     res.redirect('/profile');
     return;
   }
-
   res.render('login');
+});
+
+//This route allows the nav button "write a review" to go to the search book page
+router.get('/searchbook', (req, res) => {
+  res.render('searchbook');
+});
+
+//This route allows the search for a book page to link to the write a review page
+router.get('/review', (req, res) => {
+  res.render('review');
 });
 
 module.exports = router;
