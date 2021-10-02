@@ -78,7 +78,5 @@ function bookSearch() {
 
 //set document getelement to a variable then use as truthy
 
-if ('bookSearchButton') {
 document.getElementById('bookSearchButton').addEventListener('click', bookSearch, false)
-};
 
