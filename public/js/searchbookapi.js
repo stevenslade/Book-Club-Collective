@@ -5,7 +5,7 @@ function bookSearch() {
         url: "https://www.googleapis.com/books/v1/volumes?q=" + search,
         dataType: "json",
         success: function(data) {
-
+            console.log(data);
             //This deletes any existing data that has been anchored so a new search gets a clean anchor point
             while (apiSearchAnchor.firstChild) {
                 apiSearchAnchor.removeChild(apiSearchAnchor.firstChild);
@@ -17,6 +17,17 @@ function bookSearch() {
                 let title = data.items[i].volumeInfo.title;     
                 let author = data.items[i].volumeInfo.authors;
                 let imgsrchttp = data.items[i].volumeInfo.imageLinks.smallThumbnail;
+                var isbn13 = 0;
+                var isbntype0 = data.items[i].volumeInfo.industryIdentifiers[0].type;
+
+                //because sometimes they switch position
+                if (isbntype0 === 'ISBN_13') {
+                    isbn13 = data.items[i].volumeInfo.industryIdentifiers[0].identifier;
+                } else {
+                    isbn13 = data.items[i].volumeInfo.industryIdentifiers[1].identifier;
+                }
+                
+                console.log("isbn13: ", isbn13);
 
                 //create the elements
                 var col = document.createElement("div");
@@ -37,7 +48,7 @@ function bookSearch() {
                 //titleButton.setAttribute('class', "btn btn-primary");
 
                 //use text content to to assign content to html elements
-                cardTitle.setAttribute('href', "/review")
+                cardTitle.setAttribute('href', "/review/" + isbn13);
                 cardTitle.textContent = title;
                 bookimg.setAttribute('src', imgsrchttp);
                 bookauthor.textContent = author;
@@ -65,6 +76,9 @@ function bookSearch() {
     });
 }
 
-document.getElementById('bookSearchButton').addEventListener('click', bookSearch, false)
+//set document getelement to a variable then use as truthy
 
+if ('bookSearchButton') {
+document.getElementById('bookSearchButton').addEventListener('click', bookSearch, false)
+};
 
