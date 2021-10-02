@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col">
       <div class="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
+        {{!-- put a data attribute on the below div and an id, get the div, get the attribute (starts with data-) get the attribute off the element --}}
         <div class="text-center">
           <h2>Book Title</h2>
           <p>by</p>
@@ -9,6 +10,7 @@
           <img src="https://via.placeholder.com/150">
           <p>Brief Description of the book</p>
           <h2>BCC STAR RATING</h2>
+          <h2>ISBN13 = {{ isbn }}</h2>
         </div>
       </div>
     </div>
@@ -50,11 +52,9 @@
           <div>Spot for Existing reviews</div>
         </div>
     </div>
-      
-
-
-
     
     </div>
   </div>
 </div>
+
+{{!-- add link to script to populate book info--}}

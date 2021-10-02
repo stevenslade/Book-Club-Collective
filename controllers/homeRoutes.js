@@ -88,4 +88,20 @@ router.get('/review', (req, res) => {
   res.render('review');
 });
 
+//This route is to the review page with a book isbn
+// router.get('/review/:id', (req, res) => {
+//   const isbn13 = req.params['id'];
+//   console.log(isbn13);
+//   res.render('review');
+// });
+
+router.get('/review/:id', (req, res) => {
+  const isbn13 = req.params['id'];
+  res.render('review', {
+    isbn: isbn13
+  });
+});
+
+
+
 module.exports = router;

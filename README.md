@@ -1,8 +1,10 @@
 # Book-Club-Collective
 
-![logo](./images/logo2.png)
+![logo](./public/images/logo2.png)
 
 A Full stack app for reviewing books and finding a book club of like minded readers
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
 
@@ -13,6 +15,8 @@ A Full stack app for reviewing books and finding a book club of like minded read
 1. [Installation](#installation)
 
 1. [Usage](#usage)
+
+1. [License](#license)
 
 1. [Collaborators](#collaborators)
 
@@ -27,7 +31,7 @@ A Full stack app for reviewing books and finding a book club of like minded read
 
 ## <a id="wireframe"></a>Wireframe
 
-![Wireframe Home Page](./images/BCCWireframe.png)
+![Wireframe Home Page](./public/images/BCCWireframe.png)
 
 ## <a id="screenshot"></a>Screenshot
 
@@ -42,6 +46,10 @@ A Full stack app for reviewing books and finding a book club of like minded read
 ## <a id="usage"></a>Usage
 
 * The repo can be forked and then the required modules installed as per above.  The application can be run from the command line with the entry point "node server.js"
+
+## <a id="license"></a>License
+
+* MIT
 
 ## <a id="collaborators"></a>Collaborators
 
