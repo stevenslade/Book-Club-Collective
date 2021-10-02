@@ -71,8 +71,9 @@ button.btn:hover {
   border-radius: 1rem;
   font-size: 15px;
 }
+
 .col-sm {
-  margin: 40px;
+  margin: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;

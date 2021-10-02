@@ -111,7 +111,7 @@ router.get('/review/:id', async (req, res) => {
       ]
   })
   const reviews = reviewData.map((review) => review.get({ plain:true}));
-  console.log(isbn13);
+  // console.log(isbn13);
   res.render('review', {
     isbn: isbn13, reviews:reviews
   });
