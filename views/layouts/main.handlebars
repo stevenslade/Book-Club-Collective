@@ -1,92 +1,107 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Club Collective</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Club Collective</title>
 
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
 
-  <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-  />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-  <!-- BootstrapValidator CSS -->
-  <link
-    rel="stylesheet"
-    href="//cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"
-  />
-  <!-- Adobe Fonts -->
-  <link rel="stylesheet" href="https://use.typekit.net/sgp1yai.css">
-  <!-- Linked to CSS-->
+    <!-- BootstrapValidator CSS -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"
+    />
+    <!-- Adobe Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/sgp1yai.css" />
+    <!-- Linked to CSS-->
 
-  {{!-- <link rel="stylesheet" type="text/css" href="../../public/css/style.css" /> --}}
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #fcf8f3;">
-    <a class="navbar-brand" href="/"><img src = "/images/logo5.png"></a>
+    {{! <link rel="stylesheet" type="text/css" href="../../public/css/style.css" /> }}
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light"
+      style="background-color: #fcf8f3;"
+    >
+      <a class="navbar-brand" href="/"><img src="/images/logo5.png" /></a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav navbar-right">
-        <!-- <a class="nav-item nav-link" href="/login">Login</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav navbar-right">
+          <!-- <a class="nav-item nav-link" href="/login">Login</a>
         <a class="nav-item nav-link" href="/register">Register</a> -->
-        <a class="nav-item nav-link" href="/top10">Top 10 List</a>
+          <a class="nav-item nav-link" href="/top10">Top 10 List</a>
 
-        {{!-- changed to search book --}}
-        <a class="nav-item nav-link" href="/searchbook">Write a Review</a> 
-        <a class="nav-item nav-link" href="/clubs">Join a Book Club</a>
-        <a class="nav-item nav-link" href="/login">Login</a>
-        <a class="nav-item nav-link" href="/register">Register</a>
-        <div class="login-container">
+          {{! changed to search book }}
+          <a class="nav-item nav-link" href="/searchbook">Write a Review</a>
+          <a class="nav-item nav-link" href="/clubs">Join a Book Club</a>
+          <a class="nav-item nav-link" href="/login">Login</a>
+          <a class="nav-item nav-link" href="/register">Register</a>
+          <div class="login-container">
             <form>
-              <input type="text" placeholder="Book Search" name="bookSearch">
-              <button type="submit" class= "btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+              <input type="text" placeholder="Book Search" name="bookSearch" />
+              <button type="submit" class="btn"><i
+                  class="fa fa-search"
+                  aria-hidden="true"
+                ></i></button>
 
             </form>
           </div>
+        </div>
       </div>
-    </div>
-  </nav>
-<main class="container">
-{{{body}}}
-</main>
+    </nav>
+    <main class="container">
+      {{{body}}}
+    </main>
 
-<!-- Latest compiled and minified JavaScript -->
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-  crossorigin="anonymous"
-></script>
-<script
-  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-></script>
-<script
-  type="text/javascript"
-  src="//cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js"
-></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js"
+    ></script>
 
+    {{! This is the google endpoint for the books api }}
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"
+    ></script>
 
-{{!-- This is the google endpoint for the books api --}}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    {{! This link is added to allow access to the script file with the booksearch code }}
+    <script src="/js/searchbookapi.js"></script>
 
-{{!-- This link is added to allow access to the script file with the booksearch code --}}
-<script src="/js/searchbookapi.js"></script>
+    {{! Conditionally render login or logout links }}
 
-
-
-        {{!-- Conditionally render login or logout links --}}
-
-        {{!-- {{#if logged_in}}
+    {{!-- {{#if logged_in}}
 
         <a href="/profile">profile</a> |
         <button class="no-button" id="logout">logout</button>
@@ -99,6 +114,6 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}} --}}
-</body>
+  </body>
 
 </html>
