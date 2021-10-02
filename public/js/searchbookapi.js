@@ -5,7 +5,7 @@ function bookSearch() {
         url: "https://www.googleapis.com/books/v1/volumes?q=" + search,
         dataType: "json",
         success: function(data) {
-            console.log(data);
+            //console.log(data);
             //This deletes any existing data that has been anchored so a new search gets a clean anchor point
             while (apiSearchAnchor.firstChild) {
                 apiSearchAnchor.removeChild(apiSearchAnchor.firstChild);
@@ -27,7 +27,7 @@ function bookSearch() {
                     isbn13 = data.items[i].volumeInfo.industryIdentifiers[1].identifier;
                 }
                 
-                console.log("isbn13: ", isbn13);
+                //console.log("isbn13: ", isbn13);
 
                 //create the elements
                 var col = document.createElement("div");
@@ -76,7 +76,9 @@ function bookSearch() {
     });
 }
 
-//set document getelement to a variable then use as truthy
+//set document getelement to a variable then use as truthy, this prevents the event listener from giving errors on pages in which it is not present
+const isSearchButton = document.getElementById('bookSearchButton');
 
+if (isSearchButton) {
 document.getElementById('bookSearchButton').addEventListener('click', bookSearch, false)
-
+};
