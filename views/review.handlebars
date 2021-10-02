@@ -4,17 +4,22 @@
       <div class="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
         {{!-- put a data attribute on the below div and an id, get the div, get the attribute (starts with data-) get the attribute off the element --}}
         <div class="text-center">
-          <h2>Book Title</h2>
+
+          <p id="isbnNum" data-isbn13= {{ isbn }}></p>
+
+          <h2 id="booktitle">Book Title</h2>
           <p>by</p>
-          <h2>Author</h2>
-          <img src="https://via.placeholder.com/150">
-          <p>Brief Description of the book</p>
+          <h2 id="author">Author</h2>
+          <img id ="imgsource" src="https://via.placeholder.com/150">
+          <p id="description">Brief Description of the book</p>
           <h2>BCC STAR RATING</h2>
-          <h2>ISBN13 = {{ isbn }}</h2>
+          {{!-- <h2>ISBN13 = {{ isbn }}</h2> --}}
         </div>
       </div>
     </div>
 
+
+ {{!-- {{#if logged_in}} --}}
     <div class="col">
       <div class ="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
         <form id="blog-form">
@@ -42,19 +47,50 @@
               rows="10"
               required="required"
               class="form-control"
-            >{{content}}</textarea>
+            >{{description}}</textarea>
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
-        </div>
-        <div class="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
-          <div>Spot for Existing reviews</div>
-        </div>
+        </form>
+      </div>
     </div>
-    
+
+    </div>
+      
+  {{!-- {{else}} --}}
+  <a class="btn btn-primary" href="/login" style = "color:#fcf8f3; background-color: #65625e; border-style: none; margin: 20px;">Login to Leave a Review</a>
+  {{!-- {{/if}} --}}
+
+
+{{#if reviews.length}}
+  <div class="container container-fluid mt-5">
+      <h3>Current Comments:</h3>
+      {{#each reviews as |review|}}
+        <div>
+          <div>
+            <p>{{review.description}}</p>
+          </div>
+          <h2>
+            <p>Created by {{user.name}}</p>
+          </h2>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>
+
+<div class="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
+          <div>Spot for Existing reviews</div>
+</div>
+
+<script src="../js/project.js"></script>
+
     </div>
   </div>
 </div>
 
+{{!-- This is the google endpoint for the books api --}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
 {{!-- add link to script to populate book info--}}
+<script src="/js/bookdatareviewpage.js"></script>

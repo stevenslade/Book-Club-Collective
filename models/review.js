@@ -11,6 +11,14 @@ Review.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    isbn: {
+      allowNull: false,
+      type: DataTypes.STRING,
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     stars: {
       type: DataTypes.INTEGER,
       allowNull: true,
@@ -25,10 +33,7 @@ Review.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
+      allowNull: false,
   },
 },
   {
