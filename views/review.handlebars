@@ -15,6 +15,8 @@
       </div>
     </div>
 
+
+ {{!-- {{#if logged_in}} --}}
     <div class="col">
       <div class ="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
         <form id="blog-form">
@@ -42,17 +44,44 @@
               rows="10"
               required="required"
               class="form-control"
-            >{{content}}</textarea>
+            >{{description}}</textarea>
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
-        </div>
-        <div class="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
-          <div>Spot for Existing reviews</div>
-        </div>
+        </form>
+      </div>
     </div>
-    
+
+    </div>
+      
+  {{!-- {{else}} --}}
+  <a class="btn btn-primary" href="/login" style = "color:#fcf8f3; background-color: #65625e; border-style: none; margin: 20px;">Login to Leave a Review</a>
+  {{!-- {{/if}} --}}
+
+
+{{#if reviews.length}}
+  <div class="container container-fluid mt-5">
+      <h3>Current Comments:</h3>
+      {{#each reviews as |review|}}
+        <div>
+          <div>
+            <p>{{review.description}}</p>
+          </div>
+          <h2>
+            <p>Created by {{user.name}}</p>
+          </h2>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>
+
+<div class="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
+          <div>Spot for Existing reviews</div>
+</div>
+
+<script src="../js/project.js"></script>
+
     </div>
   </div>
 </div>
