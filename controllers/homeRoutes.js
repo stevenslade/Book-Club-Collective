@@ -85,6 +85,10 @@ router.get("/searchbook", (req, res) => {
 
 //This route allows the nav button "Register" to go to the Register page
 router.get("/register", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/");
+    return;
+  }
   res.render("register");
 });
 

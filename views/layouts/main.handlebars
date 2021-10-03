@@ -58,7 +58,14 @@
           {{! changed to search book }}
           <a class="nav-item nav-link" href="/searchbook">Write a Review</a>
           <a class="nav-item nav-link" href="/clubs">Join a Book Club</a>
-          <a class="nav-item nav-link" href="/login">Login</a>
+
+          {{#if logged_in}}
+            {{! <button id="logout" class="btn btn-link py-0">Logout</button> }}
+            <a class="nav-item nav-link" id="logout" href="">Logout</a>
+          {{else}}
+            <a class="nav-item nav-link" href="/login">Login</a>
+          {{/if}}
+
           <a class="nav-item nav-link" href="/register">Register</a>
           <div class="login-container">
             <form>
@@ -76,6 +83,10 @@
     <main class="container">
       {{{body}}}
     </main>
+
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
 
     <!-- Latest compiled and minified JavaScript -->
     <script
@@ -99,21 +110,6 @@
     {{! This link is added to allow access to the script file with the booksearch code }}
     <script src="/js/searchbookapi.js"></script>
 
-    {{! Conditionally render login or logout links }}
-
-    {{!-- {{#if logged_in}}
-
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-
-  
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}} --}}
   </body>
 
 </html>
