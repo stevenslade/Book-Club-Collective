@@ -25,10 +25,10 @@ function bookSearch() {
                 //The following block is build code not needed in production
                 //var isbnAt0 = data.items[i].volumeInfo.industryIdentifiers[0].identifier;
                 //var isbnAt1 = data.items[i].volumeInfo.industryIdentifiers[1].identifier;
-                console.log("title: ", title);
-                if (rating) {
-                    console.log("rating: ", rating);
-                };
+                // console.log("title: ", title);
+                // if (rating) {
+                //     console.log("rating: ", rating);
+                // };
                 // console.log("isbnAt0: ", isbnAt0);
                 // console.log("isbnAt1: ", isbnAt1);
                 // console.log("isbn13: ", isbn13);
