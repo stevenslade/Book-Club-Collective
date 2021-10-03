@@ -6,6 +6,8 @@ function bookSearch() {
         dataType: "json",
         success: function(data) {
             //console.log(data);
+
+            
             //This deletes any existing data that has been anchored so a new search gets a clean anchor point
             while (apiSearchAnchor.firstChild) {
                 apiSearchAnchor.removeChild(apiSearchAnchor.firstChild);
@@ -34,6 +36,7 @@ function bookSearch() {
                 var card = document.createElement("div");
                 var body = document.createElement("div");
                 //var titleButton = document.createElement("button");
+                var cardTitleHeader = document.createElement("h2");
                 var cardTitle = document.createElement("a");
                 var bookimg = document.createElement("img");
                 var bookauthor = document.createElement("p");
@@ -41,11 +44,13 @@ function bookSearch() {
                 //append to html - need to append before attaching a class
                 col.append(card);
                 card.append(body);
-                body.append(cardTitle, bookimg, bookauthor);
+                body.append(cardTitleHeader, bookimg, bookauthor);
+                cardTitleHeader.append(cardTitle);
 
                 //attach a class - set attribute
                 col.setAttribute('class', "col-4 border border-3");
                 //titleButton.setAttribute('class', "btn btn-primary");
+                bookauthor.setAttribute('class', "authorstyle");
 
                 //use text content to to assign content to html elements
                 cardTitle.setAttribute('href', "/review/" + isbn13);
