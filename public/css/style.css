@@ -63,6 +63,22 @@ h1 {
   font-style: normal;
 }
 
+/* This formats the Title of the Book after search */
+h2 a {
+  color: #65625e;
+  text-align: center;
+  font-family: century-gothic,sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* This formats the style for the Author's name after the Book Search */
+.authorstyle {
+  font-size:larger;
+  margin: 2px;
+}
+
+
 button.btn:hover {
   background-color: #65625e;
   color: #fcf8f3;
