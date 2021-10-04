@@ -1,6 +1,6 @@
 const User = require('./User');
 // const Project = require('./Project');
-const Club = require('./Club')
+// const Club = require('./Club')
 const Review = require('./Review');
 // const Book = require('./Book');
 
@@ -38,7 +38,7 @@ Review.belongsTo(User, {
 // });
 
 
-module.exports = { User, Review, Club };
+module.exports = { User, Review };
 
 // const User = require('./User');
 // const Review = require('./Review');
