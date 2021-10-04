@@ -141,6 +141,39 @@ button.btn:hover {
   margin: 40px;
   background-color: #fcf8f3;
   color: #65625e;
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+  font-family: century-gothic,sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 50px;
+  background-color:#fcf8f3;
+  color: #65625e;
+}
+
+.jumbotron {
+  margin: 40px;
+  background-color:#fcf8f3;
+  color: #65625e;
+  padding: 10px;
+}
+
+.container {
+  background-color:#fcf8f3;
+  color: #65625e;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 1rem;
+}
+
+.reviewContainer {
+  border-radius: 1rem;
+  background-color:#fcf8f3;
+  color: #65625e;
+  margin: 10px;
 }
 
 /* Scales the stars up if the screen gets larger */
@@ -153,3 +186,4 @@ button.btn:hover {
     font-size: larger;
   }
 }
+

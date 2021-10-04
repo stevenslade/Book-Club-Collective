@@ -129,11 +129,9 @@ router.get('/review/:id', async (req, res) => {
 }
 });
 
-// router.get('/review/:id', (req, res) => {
+router.get('/clubs', (req, res) => {
+  res.render('clubs')
+});
 
-//   // res.render('review2', {
-//   // });
-//   res.send("ok")
-// });
 
 module.exports = router;

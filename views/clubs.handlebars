@@ -1,0 +1,24 @@
+{{!-- <div class="card">
+  <div class="card-body">
+      <h2>{{name}}</h2>
+      <p>{{description}}</p>
+      {{!-- <p>Created by {{user.name}} on {{format_date date_created}}</p> --}}
+  {{!-- </div>
+</div> --}} 
+
+<div class="col">
+      <div class ="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
+        <form id="blog-form">
+          <h2> Create a Book Club: </h2>
+          <div class="form-group">
+            <textarea id="clubName" name="review" placeholder = "Club Name" cols="40">{{description}}</textarea>
+          </div>
+          <div class="form-group">
+            <textarea id="clubDescription" name="review" placeholder = "Club Description" cols="40" rows="10">{{description}}</textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
