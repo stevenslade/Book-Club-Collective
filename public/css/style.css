@@ -6,7 +6,7 @@
 
 .Stars {
   --percent: calc(var(--rating) / 5 * 100%);
-  
+
   display: inline-block;
   font-size: var(--star-size);
   font-family: Times;
@@ -14,33 +14,34 @@
 }
 
 .Stars::before {
-    content: '★★★★★';
-    letter-spacing: 3px;
-    background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  content: "★★★★★";
+  letter-spacing: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--star-background) var(--percent),
+    var(--star-color) var(--percent)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-
 body {
-  background-image: url("../../images/books.jpg") ;
+  background-image: url("../../images/books.jpg");
   background-attachment: fixed;
   color: #65625e;
-  font-family: poiret-one,sans-serif;
+  font-family: poiret-one, sans-serif;
   font-weight: 400;
   font-style: normal;
-
 }
 .navbar {
   padding: 10px 10px 10px 10px;
-  font-family: farm-new,sans-serif;
+  font-family: farm-new, sans-serif;
   font-weight: 300;
   font-style: normal;
   position: sticky;
   color: #65625e;
   background-color: #fcf8f3;
-
 }
 
 button.btn {
@@ -50,12 +51,12 @@ button.btn {
   margin: 5px;
   border-radius: 1rem;
   font-size: 15px;
-  font-family: farm-new,sans-serif;
+  font-family: farm-new, sans-serif;
   font-weight: 300;
   font-style: normal;
 }
 
-button.btn:hover{
+button.btn:hover {
   cursor: pointer;
 }
 
@@ -65,15 +66,15 @@ button.btn:hover{
 
 input {
   border-radius: 1rem;
-  background-color: rgb(255,255,255,0.95);
+  background-color: rgb(255, 255, 255, 0.95);
   padding: 5px;
-  border-style:solid;
+  border-style: solid;
 }
 
 main.container {
-  background-color: rgb(255,255,255,0.80);
+  background-color: rgb(255, 255, 255, 0.8);
   border-radius: 1rem;
-  margin-top: 2%;;
+  margin-top: 2%;
   color: #65625e;
   display: flex;
   flex-direction: column;
@@ -83,7 +84,7 @@ main.container {
 
 h1 {
   text-align: center;
-  font-family: century-gothic,sans-serif;
+  font-family: century-gothic, sans-serif;
   font-weight: 300;
   font-style: normal;
 }
@@ -92,7 +93,7 @@ h1 {
 h2 a {
   color: #65625e;
   text-align: center;
-  font-family: century-gothic,sans-serif;
+  font-family: century-gothic, sans-serif;
   font-weight: 200;
   font-style: normal;
   font-size: medium;
@@ -100,10 +101,9 @@ h2 a {
 
 /* This formats the style for the Author's name after the Book Search */
 .authorstyle {
-  font-size:larger;
+  font-size: larger;
   margin: 2px;
 }
-
 
 button.btn:hover {
   background-color: #65625e;
@@ -125,17 +125,31 @@ button.btn:hover {
   padding: 20px;
 }
 
+#homepageParagraph {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.homepageImage {
+  width: 60%;
+  height: auto;
+  float: right;
+  position: relative;
+}
+
 .reviewCard {
   margin: 40px;
-  background-color:#fcf8f3;
+  background-color: #fcf8f3;
   color: #65625e;
 }
 
 /* Scales the stars up if the screen gets larger */
-@media (min-width:780px) {
+@media (min-width: 780px) {
+  :root {
+    --star-size: 40px;
+  }
 
-  :root { --star-size: 40px; }
-
-  h2 a { font-size: larger; }
-
+  h2 a {
+    font-size: larger;
+  }
 }
