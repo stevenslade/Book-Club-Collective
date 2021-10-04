@@ -49,16 +49,21 @@
 
 
 {{#if reviews.length}}
-  <div class="container container-fluid mt-5">
+  <div class ="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
       <h3>Current Reviews:</h3>
       {{#each reviews as |review|}}
-        <div>
+      <div></div>
+        <div class= "reviewContainer" style = "background-color: white; color: #65625e; border-radius: 1rem; margin: 20px">
           <div>
             <p>{{review.description}}</p>
           </div>
-          <h2>
+          <div>
+            <p>{{review.stars}}</p>
+          </div>
+          <div>
             <p>Created by {{user.name}}</p>
-          </h2>
+          </div>
+        </div>
       {{/each}}
     </div>
   {{/if}}
