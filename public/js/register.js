@@ -4,29 +4,21 @@ const signupFormHandler = async (event) => {
   const name = document.querySelector("#user-user-name").value.trim();
   const email = document.querySelector("#user-email").value.trim();
   const password = document.querySelector("#user-password").value.trim();
-  const ConfirmPassword = document
+  const confirmPassword = document
     .querySelector("#user-password-confirm")
     .value.trim();
   const faveGen = document.querySelector("#user-faveGenre").value.trim();
   const faveBook = document.querySelector("#user-faveBook").value.trim();
   const faveQ = document.querySelector("#user-faveQuote").value.trim();
 
-  if (
-    name &&
-    email &&
-    password &&
-    ConfirmPassword &&
-    faveGen &&
-    faveBook &&
-    faveQ
-  ) {
+  if (name && email && password && confirmPassword && faveGen && faveBook && faveQ) {
     const response = await fetch("/api/users", {
       method: "POST",
       body: JSON.stringify({
         name,
         email,
         password,
-        ConfirmPassword,
+        confirmPassword,
         faveGen,
         faveBook,
         faveQ,
@@ -35,13 +27,12 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/profile");
+      console.log("success");
+      document.location.replace("/register");
     } else {
       alert(response.statusText);
     }
   }
-};
+}
 
-document
-  .querySelector(".register-form")
-  .addEventListener("submit", signupFormHandler);
+document.querySelector(".register-form").addEventListener("submit", signupFormHandler);
