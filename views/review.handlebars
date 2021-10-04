@@ -22,33 +22,18 @@
  {{!-- {{#if logged_in}} --}}
     <div class="col">
       <div class ="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
-        <form id="blog-form">
-            <div class="form-group">
-              <label for="reviewTitle">Review Title</label>
-              <input
-                value="{{title}}"
-                id="reviewTitle"
-                name="reviewtitle"
-                placeholder="Enter Review Title"
-                type="text"
-                required="required"
-                class="form-control"
-                data-bv-notempty="true"
-                data-bv-notempty-message="The title cannot be empty" 
-              />
-            </div>
-
+        <form id="new-comment-form">
+          <h2> Write A Review: </h2>
           <div class="form-group">
-            <label for="review">Review</label>
-            <textarea
-              id="description"
-              name="review"
-              cols="40"
-              rows="10"
-              required="required"
-              class="form-control"
-            >{{description}}</textarea>
+            <textarea id="reviewTitle" name="review" placeholder = "Review Title" cols="40">{{description}}</textarea>
           </div>
+          <div class="form-group">
+            <textarea id="stars" name="review" placeholder = "Stars out of 5" cols="40">{{description}}</textarea>
+          </div>
+          <div class="form-group">
+            <textarea id="reviewDescription" name="review" placeholder = "Review" cols="40" rows="10">{{description}}</textarea>
+          </div>
+          <input type = "hidden" value = {{isbn}} id = "isbn">
           <div class="form-group">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
@@ -59,13 +44,13 @@
     </div>
       
   {{!-- {{else}} --}}
-  <a class="btn btn-primary" href="/login" style = "color:#fcf8f3; background-color: #65625e; border-style: none; margin: 20px;">Login to Leave a Review</a>
+  {{!-- <a class="btn btn-primary" href="/login" style = "color:#fcf8f3; background-color: #65625e; border-style: none; margin: 20px;">Login to Leave a Review</a> --}}
   {{!-- {{/if}} --}}
 
 
 {{#if reviews.length}}
   <div class="container container-fluid mt-5">
-      <h3>Current Comments:</h3>
+      <h3>Current Reviews:</h3>
       {{#each reviews as |review|}}
         <div>
           <div>
@@ -79,11 +64,11 @@
   {{/if}}
 </div>
 
-<div class="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
+{{!-- <div class="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
           <div>Spot for Existing reviews</div>
-</div>
+</div> --}}
 
-<script src="../js/review.js"></script>
+<script src="/js/review.js"></script>
 
     </div>
   </div>

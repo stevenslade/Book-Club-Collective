@@ -1,5 +1,6 @@
 const User = require('./User');
 // const Project = require('./Project');
+const Club = require('./Club')
 const Review = require('./Review');
 // const Book = require('./Book');
 
@@ -20,6 +21,14 @@ Review.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
+// User.hasMany(Club, {
+//   foreignKey: 'user_id'
+// });
+
+// Club.belongsTo(User, {
+//   foreignKey: 'user_id'
+// });
+
 // Book.hasMany(Review, {
 //   foreignKey: 'book_id'
 // });
@@ -29,7 +38,7 @@ Review.belongsTo(User, {
 // });
 
 
-module.exports = { User, Review, };
+module.exports = { User, Review, Club };
 
 // const User = require('./User');
 // const Review = require('./Review');
