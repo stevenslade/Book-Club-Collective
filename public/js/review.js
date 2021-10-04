@@ -1,12 +1,12 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
-    console.log("testing")
+    // console.log("testing")
     const description = document.querySelector('#description').value.trim();
-    const book_id = document.querySelector('#projectId').value;
+    const reviewTitle = document.querySelector('#reviewTitle').value;
     if (description) {
-      const response = await fetch(`/api/comments`, {
+      const response = await fetch(`/review/${isbn}`, {
         method: 'POST',
-        body: JSON.stringify({ description, book_id }),
+        body: JSON.stringify({ description, reviewTitle }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -15,11 +15,11 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.reload();
       } else {
-        alert('Failed to create comment');
+        alert('Failed to create review');
       }
     }
   };
   
   document
-    .querySelector('.new-comment-form')
+    .querySelector('.form-group')
     .addEventListener('submit', newFormHandler);

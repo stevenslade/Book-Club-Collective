@@ -5,7 +5,7 @@ function bookSearch() {
         url: "https://www.googleapis.com/books/v1/volumes?q=" + search,
         dataType: "json",
         success: function(data) {
-            //console.log(data);
+                        
             //This deletes any existing data that has been anchored so a new search gets a clean anchor point
             while (apiSearchAnchor.firstChild) {
                 apiSearchAnchor.removeChild(apiSearchAnchor.firstChild);
@@ -14,44 +14,71 @@ function bookSearch() {
             for(i=0; i <data.items.length; i++){
 
                 //create variables from returned data
-                let title = data.items[i].volumeInfo.title;     
+                let title = data.items[i].volumeInfo.title;
+                //Truncates the title to the length specified
+                title = title.substring(0, 35);   
                 let author = data.items[i].volumeInfo.authors;
                 let imgsrchttp = data.items[i].volumeInfo.imageLinks.smallThumbnail;
-                var isbn13 = 0;
-                var isbntype0 = data.items[i].volumeInfo.industryIdentifiers[0].type;
+                let isbn13 = data.items[i].volumeInfo.industryIdentifiers[0].identifier;
+                let rating = data.items[i].volumeInfo.averageRating;
 
-                //because sometimes they switch position
-                if (isbntype0 === 'ISBN_13') {
-                    isbn13 = data.items[i].volumeInfo.industryIdentifiers[0].identifier;
-                } else {
-                    isbn13 = data.items[i].volumeInfo.industryIdentifiers[1].identifier;
-                }
+                //The following block is build code not needed in production
+                //var isbnAt0 = data.items[i].volumeInfo.industryIdentifiers[0].identifier;
+                //var isbnAt1 = data.items[i].volumeInfo.industryIdentifiers[1].identifier;
+                // console.log("title: ", title);
+                // if (rating) {
+                //     console.log("rating: ", rating);
+                // };
+                // console.log("isbnAt0: ", isbnAt0);
+                // console.log("isbnAt1: ", isbnAt1);
+                // console.log("isbn13: ", isbn13);
+                // end of build code
                 
-                //console.log("isbn13: ", isbn13);
 
                 //create the elements
                 var col = document.createElement("div");
                 var card = document.createElement("div");
                 var body = document.createElement("div");
-                //var titleButton = document.createElement("button");
+                
+                var cardTitleHeader = document.createElement("h2");
                 var cardTitle = document.createElement("a");
                 var bookimg = document.createElement("img");
                 var bookauthor = document.createElement("p");
+                //var starRating = document.createElement("h2");
+
+                //This element is to display actual image of Stars for the review
+                //The code uses the work of Fred Genkin on css-tricks.com, but has been altered
+                var starsActual = document.createElement("div");
 
                 //append to html - need to append before attaching a class
                 col.append(card);
                 card.append(body);
-                body.append(cardTitle, bookimg, bookauthor);
+                body.append(cardTitleHeader, bookimg, bookauthor, starsActual);
+                cardTitleHeader.append(cardTitle);
 
                 //attach a class - set attribute
-                col.setAttribute('class', "col-4 border border-3");
+                col.setAttribute('class', "col-4 mt-3 border border-3");
                 //titleButton.setAttribute('class', "btn btn-primary");
+                bookauthor.setAttribute('class', "authorstyle");
+                //starRating.setAttribute('class', "starStyle");
+
+                starsActual.setAttribute('class', "Stars");
+                starsActual.setAttribute('style', "--rating:" + rating);
 
                 //use text content to to assign content to html elements
                 cardTitle.setAttribute('href', "/review/" + isbn13);
                 cardTitle.textContent = title;
                 bookimg.setAttribute('src', imgsrchttp);
+                bookimg.setAttribute('class', 'mt-3');
                 bookauthor.textContent = author;
+            
+                if (rating) {
+                    //starRating.textContent = rating + "/5";
+                } else {
+                    //starRating.textContent = "Be the First To Review";
+                };
+
+
                 //titleButton.textContent = title;
 
                 //appened the new container to the document

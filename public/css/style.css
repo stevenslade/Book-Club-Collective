@@ -1,3 +1,28 @@
+:root {
+  --star-size: 30px;
+  --star-color: #fff;
+  --star-background: #fc0;
+}
+
+.Stars {
+  --percent: calc(var(--rating) / 5 * 100%);
+  
+  display: inline-block;
+  font-size: var(--star-size);
+  font-family: Times;
+  line-height: 1;
+}
+
+.Stars::before {
+    content: '★★★★★';
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
 body {
   background-image: url("../../images/books.jpg") ;
   background-attachment: fixed;
@@ -63,6 +88,23 @@ h1 {
   font-style: normal;
 }
 
+/* This formats the Title of the Book after search */
+h2 a {
+  color: #65625e;
+  text-align: center;
+  font-family: century-gothic,sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: medium;
+}
+
+/* This formats the style for the Author's name after the Book Search */
+.authorstyle {
+  font-size:larger;
+  margin: 2px;
+}
+
+
 button.btn:hover {
   background-color: #65625e;
   color: #fcf8f3;
@@ -71,8 +113,9 @@ button.btn:hover {
   border-radius: 1rem;
   font-size: 15px;
 }
+
 .col-sm {
-  margin: 40px;
+  margin: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -86,4 +129,13 @@ button.btn:hover {
   margin: 40px;
   background-color:#fcf8f3;
   color: #65625e;
+}
+
+/* Scales the stars up if the screen gets larger */
+@media (min-width:780px) {
+
+  :root { --star-size: 40px; }
+
+  h2 a { font-size: larger; }
+
 }

@@ -104,29 +104,29 @@ router.get("/register", (req, res) => {
 //   res.render('review');
 // });
 
-router.get("/review/:id", async (req, res) => {
-  try {
-    const isbn13 = req.params["id"];
-    const reviewData = await Review.findAll({
-      where: {
-        isbn: isbn13,
-      },
-      include: [
-        {
-          model: User,
-          attributes: ["name"],
-        },
-      ],
-    });
-    const reviews = reviewData.map((review) => review.get({ plain: true }));
-    console.log(isbn13);
-    res.render("review", {
-      isbn: isbn13,
-      reviews: reviews,
-    });
-  } catch (err) {
-    console.log(err);
-  }
+
+
+router.get('/review/:id', async (req, res) => {
+  try { 
+    const isbn13 = req.params['id'];
+    const reviewData = await Review.findAll({ where: {
+    isbn:isbn13
+  }, 
+  include: [
+    {
+      model: User,
+      attributes: ['name'],
+            }
+      ]
+  })
+  const reviews = reviewData.map((review) => review.get({ plain:true}));
+  // console.log(isbn13);
+  res.render('review', {
+    isbn: isbn13, reviews:reviews
+  });
+} catch (err) {
+  console.log(err)
+}
 });
 
 // router.get('/review/:id', (req, res) => {
