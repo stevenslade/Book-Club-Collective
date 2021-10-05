@@ -25,10 +25,10 @@
         <form id="new-comment-form">
           <h2> Write A Review: </h2>
           <div class="form-group">
-            <textarea id="reviewTitle" name="review" placeholder = "Review Title" cols="40">{{description}}</textarea>
+            <textarea id="reviewTitle" name="review" placeholder = "Review Title" cols="40">{{title}}</textarea>
           </div>
           <div class="form-group">
-            <textarea id="stars" name="review" placeholder = "Stars out of 5" cols="40">{{description}}</textarea>
+            <textarea id="stars" name="review" placeholder = "Stars out of 5" cols="40">{{stars}}</textarea>
           </div>
           <div class="form-group">
             <textarea id="reviewDescription" name="review" placeholder = "Review" cols="40" rows="10">{{description}}</textarea>
@@ -54,6 +54,9 @@
       {{#each reviews as |review|}}
       <div></div>
         <div class= "reviewContainer" style = "background-color: white; color: #65625e; border-radius: 1rem; margin: 20px">
+          <div class = "reviewTitle">
+            <p>{{review.title}}</p>
+          </div>
           <div>
             <p>{{review.description}}</p>
           </div>
