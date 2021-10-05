@@ -35,14 +35,7 @@ User.init(
         len: [8],
       },
     },
-    // confirmPassword: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   validate: {
-    //     len: [8],
-    //   },
-    // },
-    faveBook: {
+     faveBook: {
       type: DataTypes.STRING,
       allowNull: true,
     }, 
