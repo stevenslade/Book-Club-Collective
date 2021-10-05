@@ -35,11 +35,15 @@ User.init(
         len: [8],
       },
     },
-    favorite_book: {
+     faveBook: {
       type: DataTypes.STRING,
       allowNull: true,
     }, 
-    favorite_quote: {
+    faveGen: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    }, 
+    faveQ: {
       type: DataTypes.TEXT,
       allowNull: true,
     },
