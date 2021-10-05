@@ -35,11 +35,22 @@ User.init(
         len: [8],
       },
     },
-    favorite_book: {
+    // confirmPassword: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   validate: {
+    //     len: [8],
+    //   },
+    // },
+    faveBook: {
       type: DataTypes.STRING,
       allowNull: true,
     }, 
-    favorite_quote: {
+    faveGen: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    }, 
+    faveQ: {
       type: DataTypes.TEXT,
       allowNull: true,
     },
