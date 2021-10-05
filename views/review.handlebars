@@ -27,9 +27,23 @@
           <div class="form-group">
             <textarea id="reviewTitle" name="review" placeholder = "Review Title" cols="40">{{description}}</textarea>
           </div>
+
           <div class="form-group">
             <textarea id="stars" name="review" placeholder = "Stars out of 5" cols="40">{{description}}</textarea>
           </div>
+
+          {{!-- This selecter is for use with the star rating npm module --}}
+          <div class="form-group px-5">
+            <select class="star-rating">
+              <option value="">Select a rating</option>
+              <option value="5">Excellent</option>
+              <option value="4">Very Good</option>
+              <option value="3">Average</option>
+              <option value="2">Poor</option>
+              <option value="1">Terrible</option>
+            </select>
+          </div>
+
           <div class="form-group">
             <textarea id="reviewDescription" name="review" placeholder = "Review" cols="40" rows="10">{{description}}</textarea>
           </div>
@@ -79,8 +93,14 @@
   </div>
 </div>
 
-{{!-- This is the google endpoint for the books api --}}
+{{!-- This is the google endpoint for the books api, its on main as well, it needs to be in both because handlebars --}}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
 {{!-- add link to script to populate book info--}}
 <script src="/js/bookdatareviewpage.js"></script>
+
+{{!-- These script files are for the npm module star rating --}}
+<script src="/js/star-rating.min.js"></script>
+<script>
+    var stars = new StarRating('.star-rating');
+</script>
