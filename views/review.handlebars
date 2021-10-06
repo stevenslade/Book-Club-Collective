@@ -20,8 +20,7 @@
       </div>
     </div>
 
-
- {{!-- {{#if logged_in}} --}}
+{{#if logged_in}}
     <div class="col">
       <div class ="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
         <form id="new-comment-form">
@@ -59,18 +58,20 @@
       </div>
     </div>
 
-    </div>
+
       
-  {{!-- {{else}}
-  <a class="btn btn-primary" href="/login" style = "color:#fcf8f3; background-color: #65625e; border-style: none; margin: 20px;">Login to Leave a Review</a>
-  {{/if}} --}}
+   {{else}}
+    </div>
+  <a class="btn btn-primary" href="/login" style = "color:#fcf8f3; background-color: #65625e; border-style: none; margin: 40px; width: 250px; height: 40px; ">Login to Leave a Review</a>
+{{/if}}
+
 
 
 {{#if reviews.length}}
   <div class ="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
       <h3>Current Reviews:</h3>
       {{#each reviews as |review|}}
-      <div></div>
+      <div>
         <div class= "reviewContainer" style = "background-color: white; color: #65625e; border-radius: 1rem; margin: 20px">
           <div class = "reviewTitle">
             <p>{{review.title}}</p>
@@ -93,9 +94,9 @@
 
 <script src="/js/review.js"></script>
 
-    </div>
+    {{!-- </div>
   </div>
-</div>
+</div> --}}
 
 {{!-- This is the google endpoint for the books api, its on main as well, it needs to be in both because handlebars --}}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
