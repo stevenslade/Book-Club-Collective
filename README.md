@@ -1,14 +1,19 @@
 # Book-Club-Collective
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ![logo](./public/images/logo2.png)
 
-A Full stack app for reviewing books and finding a book club of like minded readers
+Welcome to Book Club Collective!
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+Books are a wonderful escape and can take you on deep personal journeys but we here at Book Club Collective believe they can be even more enjoyable when explored as a community! To support this passion we have created a site in which you can search the Google Books API to find all your favorite reads! Our page enables you to connect with others in the form of reviews and one day soon you will be able to enjoy Clubs which will act as a forum where you can deep-dive into discussions over your most beloved tomes. Once more welcome to Book Club Collective, we can't wait to hear from you!
+
 
 ## Table of Contents
 
 1. [Description](#description)
+
+1. [Wireframe](#wireframe)
 
 1. [Screenshot](#screenshot)
 
@@ -26,23 +31,27 @@ A Full stack app for reviewing books and finding a book club of like minded read
 
 ## <a id="description"></a>Description
 
-- This application allows you as a book reader to find reviews of books submitted by other readers, submit your own reviews for other readers to enjoy and to find a book club with whom you can enjoy discussing your reads.
+- Book Club Collective is a full stack application where users can create accounts search for books using Google's Book API as well leave reviews and join book clubs. Book Club Collective uses a folder structure that matches the MVC paradigm as well as Node.js and Express to create a RESTful API. Book Club Collective uses MySQL and Sequelize for the database and [npm star-rating.js](https://www.npmjs.com/package/star-rating.js) to create a star rating system out of 5 for the book reviews and then averages them out per book. 
 
 ## <a id="wireframe"></a>Wireframe
+
+The basic wireframe structure we created at the beginning of this project.
 
 ![Wireframe Home Page](./public/images/BCCWireframe.png)
 
 ## <a id="screenshot"></a>Screenshot
 
-![Screenshot of App Homepage](/public/images/homepageSS.png)
-![Screenshot of Write a Review Page](/public/images/writeReviewPageSS.png)
-![Screenshot of Search Results Page](/public/images/searchResultsSS.png)
+![Screenshot of App Homepage](/public/images/screenshothome.png)
+![Screenshot of Write a Review Page](/public/images/screenshotreview.png)
+![Screenshot of Search Results Page](/public/images/screenshotsearch.png)
 
 ## <a id="installation"></a>Installation
 
 - Run the following to install dependancies, the following will be installed, express, mysql2, bcrypt, dotenv, sequelize, connect-session-sequelize, express-session, express-handlebars
 
-> npm i
+```
+npm i
+```
 
 ## <a id="usage"></a>Usage
 
