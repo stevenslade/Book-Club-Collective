@@ -1,4 +1,4 @@
-const newFormHandler = async (event) => {
+const newFormClubHandler = async (event) => {
     event.preventDefault();
     console.log("testing")
     const name = document.querySelector('#clubName').value.trim();
@@ -14,7 +14,7 @@ const newFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        console.log("ok");
+        document.location.reload();
       } else {
         alert('Failed to create club');
       }
@@ -39,7 +39,7 @@ const newFormHandler = async (event) => {
   
   document
     .querySelector('#blog-form')
-    .addEventListener('submit', newFormHandler);
+    .addEventListener('submit', newFormClubHandler);
   
   // document
   //   .querySelector('.project-list')
