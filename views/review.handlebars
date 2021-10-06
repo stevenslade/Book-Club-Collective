@@ -13,6 +13,8 @@
           <img id ="imgsource" src="https://via.placeholder.com/150">
           <p id="description">Brief Description of the book</p>
           <h2>BCC STAR RATING</h2>
+          <h2 class="Stars" style="--rating: {{avgStars}}"></h2>
+
           {{!-- <h2>ISBN13 = {{ isbn }}</h2> --}}
         </div>
       </div>
@@ -25,16 +27,16 @@
         <form id="new-comment-form">
           <h2> Write A Review: </h2>
           <div class="form-group">
-            <textarea id="reviewTitle" name="review" placeholder = "Review Title" cols="40">{{description}}</textarea>
+            <textarea id="reviewTitle" name="review" placeholder = "Review Title" cols="40">{{title}}</textarea>
           </div>
 
-          <div class="form-group">
+          {{!-- <div class="form-group">
             <textarea id="stars" name="review" placeholder = "Stars out of 5" cols="40">{{description}}</textarea>
-          </div>
+          </div> --}}
 
           {{!-- This selecter is for use with the star rating npm module --}}
           <div class="form-group px-5">
-            <select class="star-rating">
+            <select id="stars" class="star-rating">
               <option value="">Select a rating</option>
               <option value="5">Excellent</option>
               <option value="4">Very Good</option>
@@ -72,7 +74,8 @@
             <p>{{review.description}}</p>
           </div>
           <div>
-            <p>{{review.stars}}</p>
+            <p class="Stars" style="--rating: {{review.stars}}"></p>
+            {{!-- <p>{{review.stars}}</p> --}}
           </div>
           <div>
             <p>Created by {{user.name}}</p>
