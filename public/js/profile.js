@@ -1,11 +1,11 @@
 // const delButtonHandler = async (event) => {
 //     if (event.target.hasAttribute('data-id')) {
 
-//         const isbn = document.querySelector('#isbn').value;
-//       const response = await fetch(`/api/review/${isbn}`, {
+//     const isbn = event.target.getAttribute('data-id').value;
+//     const response = await fetch(`/api/review/${isbn}`, {
 //         method: 'DELETE',
 //       });
-  
+//       console.log(isbn)
 //       if (response.ok) {
 //         document.location.replace('/profile');
 //       } else {
@@ -16,4 +16,4 @@
   
 //   document
 //     .querySelector('.project-list')
-//     .addEventListener('submit', delButtonHandler);
+//     .addEventListener('click', delButtonHandler);
