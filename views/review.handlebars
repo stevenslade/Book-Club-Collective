@@ -20,83 +20,80 @@
       </div>
     </div>
 
-{{#if logged_in}}
-    <div class="col">
-      <div class ="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
-        <form id="new-comment-form">
-          <h2> Write A Review: </h2>
-          <div class="form-group">
-            <textarea id="reviewTitle" name="review" placeholder = "Review Title" cols="40">{{title}}</textarea>
-          </div>
+    {{#if logged_in}}
+      <div class="col">
+        <div class ="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
+          <form id="new-comment-form">
+            <h2> Write A Review: </h2>
+            <div class="form-group">
+              <textarea id="reviewTitle" name="review" placeholder = "Review Title" cols="40">{{title}}</textarea>
+            </div>
 
 
-          {{!-- <div class="form-group">
-            <textarea id="stars" name="review" placeholder = "Stars out of 5" cols="40">{{description}}</textarea>
-          </div> --}}
+            {{!-- <div class="form-group">
+              <textarea id="stars" name="review" placeholder = "Stars out of 5" cols="40">{{description}}</textarea>
+            </div> --}}
 
 
-          {{!-- This selecter is for use with the star rating npm module --}}
-          <div class="form-group px-5">
-            <select id="stars" class="star-rating">
-              <option value="">Select a rating</option>
-              <option value="5">Excellent</option>
-              <option value="4">Very Good</option>
-              <option value="3">Average</option>
-              <option value="2">Poor</option>
-              <option value="1">Terrible</option>
-            </select>
-          </div>
+            {{!-- This selecter is for use with the star rating npm module --}}
+            <div class="form-group px-5">
+              <select id="stars" class="star-rating">
+                <option value="">Select a rating</option>
+                <option value="5">Excellent</option>
+                <option value="4">Very Good</option>
+                <option value="3">Average</option>
+                <option value="2">Poor</option>
+                <option value="1">Terrible</option>
+              </select>
+            </div>
 
-          <div class="form-group">
-            <textarea id="reviewDescription" name="review" placeholder = "Review" cols="40" rows="10">{{description}}</textarea>
-          </div>
-          <input type = "hidden" value = {{isbn}} id = "isbn">
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-        </form>
-      </div>
-    </div>
+            <div class="form-group">
+              <textarea id="reviewDescription" name="review" placeholder = "Review" cols="40" rows="10">{{description}}</textarea>
+            </div>
+            <input type = "hidden" value = {{isbn}} id = "isbn">
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
 
-
-      
-   {{else}}
-    </div>
-  <a class="btn btn-primary" href="/login" style = "color:#fcf8f3; background-color: #65625e; border-style: none; margin: 40px; width: 250px; height: 40px; ">Login to Leave a Review</a>
-{{/if}}
-
-
-
-{{#if reviews.length}}
-  <div class ="card reviewCard" style = "background-color:#fcf8f3; color: #65625e; width: 100%;">
-      <h3>Current Reviews:</h3>
-      {{#each reviews as |review|}}
-      <div>
-        <div class= "reviewContainer" style = "background-color: white; color: #65625e; border-radius: 1rem; margin: 20px">
-          <div class = "reviewTitle">
-            <p>{{review.title}}</p>
-          </div>
-          <div>
-            <p>{{review.description}}</p>
-          </div>
-          <div>
-            <p class="Stars" style="--rating: {{review.stars}}"></p>
-            {{!-- <p>{{review.stars}}</p> --}}
-          </div>
-          <div>
-            <p>Created by {{user.name}}</p>
-          </div>
+          </form>
         </div>
-      {{/each}}
-    </div>
-  {{/if}}
+      </div>
+      
+    {{else}}
+        <a class="btn btn-primary" href="/login" style = "color:#fcf8f3; background-color: #65625e; border-style: none; margin: 40px; width: 250px; height: 40px; ">Login to Leave a Review</a>
+    {{/if}}
+  
+
+
+
+    {{#if reviews.length}}
+     <div class ="card reviewCard" style = "background-color:#fcf8f3; color: #65625e; width: 100%;">
+        <h3>Current Reviews:</h3>
+        {{#each reviews as |review|}}
+        <div>
+          <div class= "reviewContainer" style = "background-color: white; color: #65625e; border-radius: 1rem; margin: 20px">
+            <div class = "reviewTitle">
+              <p>{{review.title}}</p>
+            </div>
+            <div>
+              <p>{{review.description}}</p>
+            </div>
+            <div>
+              <p class="Stars" style="--rating: {{review.stars}}"></p>
+              {{!-- <p>{{review.stars}}</p> --}}
+            </div>
+            <div>
+              <p>Created by {{user.name}}</p>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    {{/if}}
+  </div>
 </div>
 
 <script src="/js/review.js"></script>
 
-    {{!-- </div>
-  </div>
-</div> --}}
 
 {{!-- This is the google endpoint for the books api, its on main as well, it needs to be in both because handlebars --}}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
