@@ -1,11 +1,21 @@
-
+    <div class="welcome">
+      <h1>Join a Book Club!</h1>
+    </div>
+    <div class="row">
+      <div class="col-xl-12 col-m-6">
+        <div class="card" id="homepageParagraph" style= "background-color: #fcf8f3;">
+           <p>Books have the ability to take you on a journey. Why not share that journey with other readers? Browse below for a book club created by fellow readers who share the same literary passion as yourself.</p>
+           <p>Or if you'd rather, start your own book club and gather your own fellowship of readers. </p>
+       </div>
+    </div>
+</div>
 
 {{#if clubs.length}}
   <div class ="card reviewCard" style = "background-color:#fcf8f3; color: #65625e; width: 100%;">
       <h3>Current Clubs:</h3>
 {{#each clubs as |club|}}
       <div>
-        <div class= "reviewContainer" style = "background-color: white; color: #65625e; border-radius: 1rem; margin: 20px; width: auto;">
+        <div class= "reviewContainer" style = "background-color: white; color: #65625e; border-radius: 1rem; margin: 20px; width: auto; border-style:solid; border-color:#65625e;">
           <div class = "reviewTitle">
         <h2>{{club.name}}</h2>
           </div>

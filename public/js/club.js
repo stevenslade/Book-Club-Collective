@@ -14,7 +14,7 @@ const newFormClubHandler = async (event) => {
       });
   
       if (response.ok) {
-        console.log("ok");
+        document.location.reload();
       } else {
         alert('Failed to create club');
       }

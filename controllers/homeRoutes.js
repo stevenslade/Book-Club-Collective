@@ -80,8 +80,9 @@ router.get("/login", (req, res) => {
 
 //This route allows the nav button "write a review" to go to the search book page
 router.get("/searchbook", (req, res) => {
+  
   res.render("searchbook", {
-    loggedIn: req.session.loggedIn
+    logged_in: req.session.logged_in
   });
   
 });
@@ -132,7 +133,8 @@ router.get('/review/:id', async (req, res) => {
   const avg = reviewTotal/reviewData.length;
   // console.log(isbn13);
   res.render('review', {
-    isbn: isbn13, reviews:reviews, avgStars: avg
+    isbn: isbn13, reviews:reviews, avgStars: avg,
+    logged_in: req.session.logged_in
   });
 } catch (err) {
   console.log(err)
