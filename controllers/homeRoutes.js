@@ -119,10 +119,17 @@ router.get('/review/:id', async (req, res) => {
             }
       ]
   })
-  const reviews = reviewData.map((review) => review.get({ plain:true}));
+  let reviewTotal = 0;
+  const reviews = reviewData.map((review) => {
+    const reviewSerializedData = review.get({ plain:true});
+    const rating = reviewSerializedData.stars;
+    reviewTotal += rating;
+    return reviewSerializedData;
+  });
+  const avg = reviewTotal/reviewData.length;
   // console.log(isbn13);
   res.render('review', {
-    isbn: isbn13, reviews:reviews
+    isbn: isbn13, reviews:reviews, avgStars: avg
   });
 } catch (err) {
   console.log(err)
