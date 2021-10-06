@@ -63,8 +63,8 @@
           <a class="nav-item nav-link" href="/clubs">Join a Book Club</a>
 
           {{#if logged_in}}
-            {{! <button id="logout" class="btn btn-link py-0">Logout</button> }}
-            <a class="nav-item nav-link" id="logout" href="">Logout</a>
+            <button id="logout" class="btn btn-link py-0">Logout</button>
+            {{!-- <a class="nav-item nav-link" id="logout" href="">Logout</a> --}}
           {{else}}
             <a class="nav-item nav-link" href="/login">Login</a>
           {{/if}}
