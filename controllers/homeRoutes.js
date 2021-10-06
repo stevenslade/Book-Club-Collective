@@ -143,9 +143,10 @@ router.get('/clubs', async (req, res) => {
                 }
           ]
       })
-  const club = clubData.map((club) => club.get({ plain:true}));
+  const clubs = clubData.map((club) => club.get({ plain:true}));
+  console.log(clubs)
   res.render('clubs', {
-    ...club
+    clubs
     // logged_in: req.session.logged_in
   });
 } catch (err) {

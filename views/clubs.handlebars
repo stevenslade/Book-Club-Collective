@@ -5,7 +5,7 @@
   <div class="card-body">
       <h2>{{club.name}}</h2>
       <p>{{club.description}}</p>
-      {{!-- <p>Created by {{user.name}} on {{format_date date_created}}</p> --}}
+      <p>Created by {{user.name}} on {{format_date date_created}}</p>
   </div>
     
   {{/each}}
@@ -45,6 +45,7 @@
   {{!-- <a class="btn btn-primary" href="/login" style = "background-color: #65625e;">Login to Leave a Comment</a> --}}
   {{!-- {{/if}} --}}
 
+{{!-- {{#if logged_in}} --}}
 <div class="col">
       <div class ="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
         <form id="blog-form">
@@ -61,6 +62,9 @@
         </form>
       </div>
     </div>
+    {{!-- {{else}}
+  <a class="btn btn-primary" href="/login" style = "background-color: #65625e;">Login to start a book club</a>
+  {{/if}} --}}
 
 <script src="/js/club.js"></script>
-<script src="/js/comment.js"></script>
+{{!-- <script src="/js/comment.js"></script> --}}
