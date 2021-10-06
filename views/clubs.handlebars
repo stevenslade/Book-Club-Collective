@@ -1,20 +1,60 @@
-{{!-- <div class="card">
-  <div class="card-body">
-      <h2>{{name}}</h2>
-      <p>{{description}}</p>
-      {{!-- <p>Created by {{user.name}} on {{format_date date_created}}</p> --}}
-  {{!-- </div>
-</div> --}} 
 
+{{#if clubs.length}}
+<div class="card">
+     {{#each clubs as |club|}}
+  <div class="card-body">
+      <h2>{{club.name}}</h2>
+      <p>{{club.description}}</p>
+      <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  </div>
+    
+  {{/each}}
+</div> 
+{{/if}}
+
+ {{!-- {{#if comments.length}}
+    <h3>Current Comments:</h3>
+    {{#each comments as |comment|}}
+    <div class="card">
+      <div class="card-body">
+        <h6>{{comment.comment_text}}</h6>
+        {{!-- <p>Created by {{user.name}} on {{format_date date_created}}</p> --}}
+      {{!-- </div>
+    </div> --}}
+    {{!-- {{/each}}
+    {{/if}} --}}
+     {{!-- {{#if logged_in}} --}}
+  {{!-- <div> 
+    <div>
+      <h3>Would you like to add a comment?</h3>
+        <form class="new-comment-form form">
+          <div class="form-group">
+            <label for="comment">Comment</label>
+            <textarea class="form-input" id="comment_text" name="comment"></textarea>
+            <input type='hidden' value={{id}} id="projectId">
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary margin10" style = "background-color: #65625e;">Add your Comment</button>
+          </div>
+        </form>
+    </div>
+  </div> --}}
+      
+  {{!-- {{else}} --}}
+  {{!-- <a class="btn btn-primary" href="/login" style = "background-color: #65625e;">Login to Leave a Comment</a> --}}
+  {{!-- {{/if}} --}}
+
+{{!-- {{#if logged_in}} --}}
 <div class="col">
       <div class ="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
         <form id="blog-form">
           <h2> Create a Book Club: </h2>
           <div class="form-group">
-            <textarea id="clubName" name="review" placeholder = "Club Name" cols="40">{{description}}</textarea>
+            <textarea id="clubName" name="review" placeholder = "Club Name" cols="40"></textarea>
           </div>
           <div class="form-group">
-            <textarea id="clubDescription" name="review" placeholder = "Club Description" cols="40" rows="10">{{description}}</textarea>
+            <textarea id="clubDescription" name="review" placeholder = "Club Description" cols="40" rows="10"></textarea>
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -22,3 +62,9 @@
         </form>
       </div>
     </div>
+    {{!-- {{else}}
+  <a class="btn btn-primary" href="/login" style = "background-color: #65625e;">Login to start a book club</a>
+  {{/if}} --}}
+
+<script src="/js/club.js"></script>
+{{!-- <script src="/js/comment.js"></script> --}}

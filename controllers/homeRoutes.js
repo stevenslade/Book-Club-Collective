@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Review, User } = require("../models");
+const { Review, User, Club } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
@@ -136,9 +136,61 @@ router.get('/review/:id', async (req, res) => {
 }
 });
 
-router.get('/clubs', (req, res) => {
-  res.render('clubs')
+router.get('/clubs', async (req, res) => {
+  try {
+    // const clubId = req.params['id'];
+    const clubData = await Club.findAll({ 
+    //   where: {
+    //   id:clubId
+    // },
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+                }
+          ]
+      })
+  const clubs = clubData.map((club) => club.get({ plain:true}));
+  console.log(clubs)
+  res.render('clubs', {
+    clubs
+    // logged_in: req.session.logged_in
+  });
+} catch (err) {
+  console.log(err)
+}
 });
+
+// router.get('/clubs/:id', async (req, res) => {
+//   try {
+//     const clubData = await Club.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name'],
+//         },
+//         {
+//           model: Comment,
+//           attributes: ['comment_text', 'date_created'],
+//         }
+//       ],
+//     });
+
+//     const club = clubData.get({ plain: true });
+
+//     res.render('club', {
+//       ...club,
+//       // logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     console.log(err)
+//     res.status(500).json(err);
+//   }
+// });
+
+// router.get('/clubs', (req, res) => {
+//   res.render('clubs')
+// })
 
 
 module.exports = router;

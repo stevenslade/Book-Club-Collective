@@ -1,7 +1,8 @@
 const User = require('./User');
 // const Project = require('./Project');
-// const Club = require('./Club')
+const Club = require('./Club')
 const Review = require('./Review');
+// const Comment = require('./Comment');
 // const Book = require('./Book');
 
 // User.hasMany(Project, {
@@ -21,11 +22,19 @@ Review.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-// User.hasMany(Club, {
+User.hasMany(Club, {
+  foreignKey: 'user_id'
+});
+
+Club.belongsTo(User, {
+  foreignKey: 'user_id'
+});
+
+// Club.hasMany(Comment, {
 //   foreignKey: 'user_id'
 // });
 
-// Club.belongsTo(User, {
+// Comment.belongsTo(Club, {
 //   foreignKey: 'user_id'
 // });
 
@@ -38,7 +47,8 @@ Review.belongsTo(User, {
 // });
 
 
-module.exports = { User, Review };
+module.exports = { User, Review, Club };
+// module.exports = { User, Review, Club, Comment };
 
 // const User = require('./User');
 // const Review = require('./Review');

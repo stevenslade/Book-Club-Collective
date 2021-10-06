@@ -30,9 +30,11 @@
             <textarea id="reviewTitle" name="review" placeholder = "Review Title" cols="40">{{title}}</textarea>
           </div>
 
+
           {{!-- <div class="form-group">
             <textarea id="stars" name="review" placeholder = "Stars out of 5" cols="40">{{description}}</textarea>
           </div> --}}
+
 
           {{!-- This selecter is for use with the star rating npm module --}}
           <div class="form-group px-5">
@@ -59,9 +61,9 @@
 
     </div>
       
-  {{!-- {{else}} --}}
-  {{!-- <a class="btn btn-primary" href="/login" style = "color:#fcf8f3; background-color: #65625e; border-style: none; margin: 20px;">Login to Leave a Review</a> --}}
-  {{!-- {{/if}} --}}
+  {{!-- {{else}}
+  <a class="btn btn-primary" href="/login" style = "color:#fcf8f3; background-color: #65625e; border-style: none; margin: 20px;">Login to Leave a Review</a>
+  {{/if}} --}}
 
 
 {{#if reviews.length}}
@@ -70,6 +72,9 @@
       {{#each reviews as |review|}}
       <div></div>
         <div class= "reviewContainer" style = "background-color: white; color: #65625e; border-radius: 1rem; margin: 20px">
+          <div class = "reviewTitle">
+            <p>{{review.title}}</p>
+          </div>
           <div>
             <p>{{review.description}}</p>
           </div>
@@ -85,10 +90,6 @@
     </div>
   {{/if}}
 </div>
-
-{{!-- <div class="card reviewCard" style = "background-color:#fcf8f3; color: #65625e;">
-          <div>Spot for Existing reviews</div>
-</div> --}}
 
 <script src="/js/review.js"></script>
 
