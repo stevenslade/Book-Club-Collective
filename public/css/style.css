@@ -191,3 +191,11 @@ h4 {
   font-weight:bold;
   font-size: 30px;
 }
+
+a.reviewLink {
+  color: #65625e;
+}
+
+a.reviewLink:hover {
+  text-decoration: underline;
+}
