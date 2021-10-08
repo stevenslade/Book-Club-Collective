@@ -13,6 +13,8 @@ Books are a wonderful escape and can take you on deep personal journeys but we h
 
 1. [Description](#description)
 
+1. [Technologies and Skills](#technologies)
+
 1. [Wireframe](#wireframe)
 
 1. [Screenshot](#screenshot)
@@ -31,7 +33,15 @@ Books are a wonderful escape and can take you on deep personal journeys but we h
 
 ## <a id="description"></a>Description
 
-- Book Club Collective is a full stack application where users can create accounts search for books using Google's Book API as well leave reviews and join book clubs. Book Club Collective uses a folder structure that matches the MVC paradigm as well as Node.js and Express to create a RESTful API. Book Club Collective uses MySQL and Sequelize for the database and [npm star-rating.js](https://www.npmjs.com/package/star-rating.js) to create a star rating system out of 5 for the book reviews and then averages them out per book. 
+- Book Club Collective is a full stack application where users can create accounts search for books using Google's Book API as well leave reviews and join book clubs. Book Club Collective uses a folder structure that matches the MVC paradigm as well as Node.js and Express to create a RESTful API. Book Club Collective uses MySQL and Sequelize for the database and [npm star-rating.js](https://www.npmjs.com/package/star-rating.js) to create a star rating system out of 5 for the book reviews and then averages them out per book.
+
+## <a id="technologies"></a>Technologies and Skills Demonstrated
+
+* Handlebars, CSS, Javascript
+* Google Books API fetch
+* MVC Paradigm 
+* Github Project Management using SCRUM Methodology
+* bcrypt, conect-session-sequelize, dotenv, express, mysql, sequelize, star-rating.js
 
 ## <a id="wireframe"></a>Wireframe
 
